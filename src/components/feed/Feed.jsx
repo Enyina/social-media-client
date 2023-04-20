@@ -15,7 +15,7 @@ export default function Feed({ username }) {
     const fetchPosts = async () => {
       // console.log(userId);
       const res = await axios.get(
-        `http://localhost:8001/api/v1/posts/timeline?userId=${userId}`
+        `https://mo-connect.onrender.com/api/v1/posts/timeline?userId=${userId}`
       );
       const timeline = res.data.timelime;
       // console.log(timeline);

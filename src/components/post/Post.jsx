@@ -22,7 +22,7 @@ export default function Post({ post }) {
       const userId = post.userId;
 
       const res = await axios.get(
-        `http://localhost:8001/api/v1/users?userId=${userId}`
+        `https://mo-connect.onrender.com/api/v1/users?userId=${userId}`
       );
       setUser(res.data.data);
       // const imgRes = await axios.get(`http://localhost:8001/api/images`);
@@ -34,9 +34,12 @@ export default function Post({ post }) {
 
   const likeHandler = () => {
     try {
-      axios.put("http://localhost:8001/api/v1/posts/" + post._id + "/likes", {
-        userId: currentUser._id,
-      });
+      axios.put(
+        "https://mo-connect.onrender.com/api/v1/posts/" + post._id + "/likes",
+        {
+          userId: currentUser._id,
+        }
+      );
     } catch (err) {}
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);

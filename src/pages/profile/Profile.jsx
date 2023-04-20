@@ -16,18 +16,15 @@ export default function Profile() {
     const fetchUser = async () => {
       const res = await axios
         .get(
-          `http://localhost:8001/api/v1/users?username=${username}`
+          `https://mo-connect.onrender.com/api/v1/users?username=${username}`
           // `https://mo-connect.onrender.com/api/v1/users?username=${username}`
         )
         .then((res) => {
-          console.log(res.data);
           setUser(res.data.data);
         });
     };
     fetchUser();
   }, [username]);
-
-  console.log({ user });
 
   return (
     <>

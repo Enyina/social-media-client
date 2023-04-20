@@ -33,9 +33,12 @@ export default function Share() {
     getBase64(file);
     try {
       // await axios.post("https://mo-connect.onrender.com/api/upload", fileName);
-      const res = await axios.post("http://localhost:8001/api/upload", {
-        fileName,
-      });
+      const res = await axios.post(
+        "https://mo-connect.onrender.com/api/upload",
+        {
+          fileName,
+        }
+      );
       console.log(res.data);
       return res;
     } catch (err) {
@@ -61,12 +64,12 @@ export default function Share() {
       console.log(newPost.img);
 
       // await axios.post("https://mo-connect.onrender.com/api/v1/posts", newPost);
-      axios.post("http://localhost:8001/api/v1/posts", newPost);
+      axios.post("https://mo-connect.onrender.comapi/v1/posts", newPost);
       window.location.reload();
     });
     if (res === undefined) {
       // await axios.post("https://mo-connect.onrender.com/api/v1/posts", newPost);
-      axios.post("http://localhost:8001/api/v1/posts", newPost);
+      axios.post("https://mo-connect.onrender.com/api/v1/posts", newPost);
       window.location.reload();
     }
   };
